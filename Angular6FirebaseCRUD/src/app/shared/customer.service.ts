@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 
 @Injectable({
@@ -20,12 +20,14 @@ export class CustomerService {
 
 
   getCustomers() {
+    debugger;
     this.customerList = this.firebase.list('customers');
     return this.customerList.snapshotChanges();
   }
 
 
   insertCustomer(customer) {
+
     this.customerList.push({
       fullName: customer.fullName,
       email: customer.email,
